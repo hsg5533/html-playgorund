@@ -1,0 +1,60 @@
+/* info.css
+   - 중간 정보 섹션(.info)
+*/
+
+.info {
+  display: flex;
+  gap: 30px;
+  padding: 20px 0;
+  max-width: 1000px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: flex-start;
+
+  /* (추가) 약간 늦게 페이드인 */
+  animation: fadeIn 1.2s ease forwards;
+}
+.section1,
+.section2 {
+  flex: 1;
+  margin: 0 15px;
+  background: #fff;
+  border-radius: 0.3rem;
+  box-shadow: var(--shadow-light);
+  padding: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+
+  /* (추가) 각 섹션이 차례로 보이는 stagger 효과 */
+  animation: fadeInUp 1s ease forwards;
+}
+.section1 {
+  animation-delay: 0.2s;
+}
+.section2 {
+  animation-delay: 0.4s;
+}
+
+.info h2 {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+li {
+  list-style-type: none;
+  color: #333;
+  margin: 8px;
+}
+.info a {
+  text-decoration: none;
+  color: var(--color-primary);
+  transition: color var(--transition-fast), font-size var(--transition-fast);
+}
+.info a:hover {
+  color: var(--color-accent);
+  font-size: 1.02rem;
+}
+#email {
+  pointer-events: none;
+  color: #666;
+}

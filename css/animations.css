@@ -1,0 +1,89 @@
+/* animations.css
+   - 프로젝트 공통으로 사용할 keyframes 및 재사용 가능한 클래스
+*/
+
+/* -----------------------------------------------------
+   keyframes
+----------------------------------------------------- */
+/* 간단한 페이드인 */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* 위에서 아래로 내려오는 */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* 아래에서 위로 올라오는 */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* 좌에서 우로 슬라이드 */
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/* floatUpDown : 상하로 살짝 흔들리는 효과 */
+@keyframes floatUpDown {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
+/* 부드러운 그라디언트 이동 */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* -----------------------------------------------------
+   재사용 가능한 클래스
+   (필요 시 HTML 요소에 class="anim-fadeInUp" 등 부여)
+----------------------------------------------------- */
+
+.anim-fadeInUp {
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.anim-fadeInDown {
+  opacity: 0;
+  animation: fadeInDown 1s ease forwards;
+}
+
+.anim-float {
+  animation: floatUpDown 3s ease-in-out infinite alternate;
+}

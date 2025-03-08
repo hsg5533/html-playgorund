@@ -1,0 +1,32 @@
+/* variables.css */
+/* 전역 CSS 변수 정의 + 기본 폰트 설정 */
+
+:root {
+  --color-primary: #2a522f;
+  --color-accent: #3eb489;
+  --color-bg: #f7f7f7;
+  --color-text: #333;
+  --color-dark-bg: #2e2e2e;
+  --color-white: #fff;
+
+  --gradient-header: linear-gradient(
+    135deg,
+    rgba(42, 82, 47, 0.95) 0%,
+    rgba(108, 170, 131, 0.95) 100%
+  );
+
+  --glass-bg: rgba(255, 255, 255, 0.3);
+
+  --shadow-light: 0 3px 8px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+}
+
+body {
+  font-family: "Quicksand", sans-serif, Arial, Helvetica, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  overflow-x: hidden;
+}

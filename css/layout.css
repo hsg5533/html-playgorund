@@ -1,0 +1,81 @@
+/* layout.css
+   - 헤더, 탭 메뉴, 중간 안내 등 레이아웃
+*/
+
+/* 상단 헤더 */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  background: var(--gradient-header);
+  position: relative;
+  color: var(--color-white);
+  font-size: 1.4rem;
+  font-weight: bold;
+  box-shadow: var(--shadow-light);
+
+  /* (추가) 화면 로드 시 헤더가 살짝 내려오며 나타나는 애니메이션 */
+  animation: fadeInDown 0.7s ease forwards;
+}
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  z-index: 0;
+}
+.header h2 {
+  z-index: 1;
+}
+
+/* 탭 메뉴 */
+.under_header {
+  display: flex;
+  align-items: center;
+  background: var(--color-dark-bg);
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-light);
+
+  /* (추가) 아래쪽에서 올라오는 애니메이션 */
+  animation: fadeInUp 0.9s ease forwards;
+}
+.under_header a {
+  flex: 1;
+  text-align: center;
+  padding: 14px 16px;
+  color: #f2f2f2;
+  text-decoration: none;
+  transition: background var(--transition-fast), color var(--transition-fast),
+    transform var(--transition-fast);
+}
+.under_header a:hover {
+  background-color: #ddd;
+  color: #333;
+  /* (추가) 탭에 마우스 올렸을 때 살짝 커지는 효과 */
+  transform: scale(1.05);
+}
+
+/* 중간 안내 영역 */
+.mid_description_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  background: var(--color-dark-bg);
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-light);
+
+  /* (추가) 페이드인 */
+  animation: fadeIn 1s ease forwards;
+}
+.mid_description {
+  color: #f1f1f1;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
